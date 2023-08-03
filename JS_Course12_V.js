@@ -30,7 +30,3 @@ first: for (let i = 0; i < 3; i++){
 		}
 	}
 }
-
-
-const arr = [3, 5, 8, 16, 20, 23, 50];
-    const result = [];
