@@ -19,7 +19,7 @@ const arrObj = {
 const b = 'b';
 
 arrObj[b] = '1234';
-console.log(arrObj['b']);
+// console.log(arrObj['b']);
 console.log(arrObj.b);
 
 console.log(arr[1]);
