@@ -31,28 +31,25 @@ function detectPersonalLvl(){
 	}
 }
 
-// detectPersonalLvl();
+detectPersonalLvl();
 
 function rememberMyFilms (){
-	let i = 0;
-
-	do{
-		const lastWatchedFilm = prompt('Один из последних просмотреных фильмов? ', ''),
+	for (let i = 0; i < 2; i++){
+		const lastWatchedFilm = prompt('Один из последних просмотреных фильмов? ', '').trim(),
 			filmRate = prompt('На сколько его оцените? ', '');
 
 		if(lastWatchedFilm != null && filmRate != null && lastWatchedFilm != '' && filmRate != '' && lastWatchedFilm.length < 50){
 			personalMovieDataBase.movies[lastWatchedFilm] = filmRate;
 			console.log('Done!');
-			i++;
+	
 		}else {
-			i++;
 			console.log('Error!');
 			i--;
 		}
-	}while (i < 1);
+	}
 }
 
-// rememberMyFilms();
+rememberMyFilms();
 
 function showMyDB(hidden){
 	if (!hidden){
