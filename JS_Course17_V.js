@@ -28,7 +28,7 @@ let counter = 0;
 for (let key in options) {
 	if (typeof (options[key]) === 'object'){
 		for (let i in options[key]){
-			console.log(`Property ${i}, has meaning ${options[key][i]}`);
+			console.log(`Property ${i}, has meaning ${options[key]}`);
 			counter++;
 		}
 	} else {
@@ -37,4 +37,6 @@ for (let key in options) {
 	}
 }
 console.log(counter);
+
+
 

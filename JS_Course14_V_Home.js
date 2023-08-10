@@ -168,30 +168,134 @@ getMathResult(5, 3);
 
 // PRACTICE №9
 
-function fib(quantity) {
-	if (typeof(quantity) == 'number' && Number.isInteger(quantity) && quantity >= 0){
-		let result = '';
-		let first = 0;
-		let second = 1;
+// function fib(quantity) {
+// 	if (typeof(quantity) == 'number' && Number.isInteger(quantity) && quantity >= 0){
+// 		let result = '';
+// 		let first = 0;
+// 		let second = 1;
 
-		for (let i = 0; i < quantity; i++) {
-			if (i + 1 === quantity) {
-				result += `${first}`;
-				// Без пробела в конце
-			} else {
-				result += `${first} `;
-			}
+// 		for (let i = 0; i < quantity; i++) {
+// 			if (i + 1 === quantity) {
+// 				result += `${first}`;
+// 				// Без пробела в конце
+// 			} else {
+// 				result += `${first} `;
+// 			}
 
-			let third = first + second;
-			first = second;
-			second = third;
-		}
-		return(result);
+// 			let third = first + second;
+// 			first = second;
+// 			second = third;
+// 		}
+// 		return(result);
 		
-	} else {
-		return('');
-	}
+// 	} else {
+// 		return('');
+// 	}
+// }
+
+// fib(4);
+
+
+// PRACTICE №10
+
+// const personalPlanPeter = {
+// 	name: 'Peter',
+// 	age: '29',
+// 	skills: {
+// 		languages: ['ru', 'eng'],
+// 		programmingLangs: {
+// 			js: '20%',
+// 			php: '10%'
+// 		},
+// 		exp: '1 month'
+// 	},
+// 	showAgeAndLangs : function (plan){
+// 		const {languages} = plan.skills;
+// 		let str = `Мне ${personalPlanPeter.age} и я владею языками: `;
+// 		languages.forEach(function(lang) {
+// 			str += `${lang.toUpperCase()} `;
+// 		});
+// 		return str;
+// 	}
+// };
+
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+
+// function showExperience(plan) {
+// 	const {languages, programmingLangs} = plan.skills;
+// 	console.log (typeof(programmingLangs));
+// }
+// showExperience(personalPlanPeter);
+
+// function showProgrammingLangs(plan) {
+// 	const {programmingLangs} = plan.skills;
+// 	for (let key in programmingLangs){
+// 		console.log(`Язык ${key} изучен на ${programmingLangs[key]} \n`);
+// 	}
+// }
+
+// showProgrammingLangs(personalPlanPeter);
+
+// PRACTICE №11
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+// // console.log(typeof(family));
+// function showFamily(arr) {
+// 	if (arr == ''){
+// 		console.log('Семья пуста');
+// 	} else {
+// 		let str = 'Семья состоит из: ';
+// 		arr.forEach(function(name) {
+// 			str += `${name} `;
+// 		});
+// 		console.log(str);
+// 	}
+// }
+
+// showFamily(family);
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+// 	arr.forEach (city =>{
+// 		console.log(city.toLowerCase());
+// 	});
+// }
+
+// standardizeStrings(favoriteCities);
+
+// PRACTICE №12
+
+
+// const someString = 'This is some strange string';
+
+// function reverse(str) {
+// 	if (typeof(str) !== 'string') {
+// 		return 'Ошибка!';
+// 	}
+// 	let newStr = '';
+// 	for (let i = str.length - 1; i >= 0; i--) {
+// 		newStr += str[i];
+// 	}
+// 	console.log(newStr);
+// }
+
+// reverse(someString);
+
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+	let str = '';
+	arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+	arr.forEach(function(curr, i) {
+		if (curr !== missingCurr) {
+			str += `${curr}\n`;
+		}
+	});
+	
 }
 
-fib(4);
-
+availableCurr(...baseCurrencies, ...additionalCurrencies, 'CNY');
