@@ -22,7 +22,7 @@ module.exports = {
 	rules: {
 		indent: ['warn', 'tab'],
 		'linebreak-style': ['error', 'windows'],
-		quotes: ['error', 'single'],
+		quotes: ['error', 'single', 'double'],
 		semi: ['error', 'always'],
 		'no-unused-vars': ['warn'],
 	},
